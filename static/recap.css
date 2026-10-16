@@ -1,0 +1,50 @@
+.recap-guide { color: var(--muted); font-size: 12px; margin: 8px 0 14px; }
+.history article.round-recap, .recap-battle .round-recap { padding: 14px 0; margin: 0; border-bottom: 1px dashed var(--line); background: transparent; }
+.recap-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.recap-heading h3 { font-family: var(--display); font-size: 16px; }
+.recap-actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 10px; }
+.action-recap { min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 10px 7px 12px 8px; background: var(--panel); color: var(--ink); }
+#room-view .action-recap { background: #293e33; color: #f0eadb; }
+.action-recap.recap-self { border-left: 4px solid var(--accent); }
+.recap-actor { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding-bottom: 8px; }
+.recap-player { display: inline-flex; align-items: center; gap: 7px; min-width: 0; font-size: 12px; font-weight: 700; overflow-wrap: anywhere; }
+.recap-player .portrait { flex: 0 0 25px; width: 25px; height: 32px; border: 1px solid var(--line); border-radius: 4px; }
+.recap-you { display: inline-block; font-size: 10px; padding: 1px 5px; margin-left: 5px; border: 1px solid currentColor; border-radius: 4px; color: var(--accent); }
+.recap-tag { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px; border: 1px dashed currentColor; border-radius: 5px; }
+.timeout-tag { color: #a14d20; background: #fff0d4; }
+.hazard-tag { color: #8e3226; background: #ffeadb; }
+.recap-play { display: grid; grid-template-columns: minmax(130px, 1fr) minmax(0, 1fr); align-items: center; gap: 10px; }
+.recap-card { display: flex; align-items: center; gap: 8px; min-width: 0; background: #fff5df; color: #32392d; border: 1px solid #b6ab8d; border-radius: 8px 5px 9px 6px; overflow: hidden; }
+.recap-card .card-art { flex: 0 0 54px; width: 54px; height: 70px; background: #f5edda; border-right: 1px dashed #a7a18f; }
+.recap-card .card-art::before { height: 125%; }
+.recap-card > span:last-child { min-width: 0; padding: 5px 5px 5px 0; }
+.recap-card strong { display: block; font-size: 12px; overflow-wrap: anywhere; }
+.recap-card small { display: block; font-size: 11px; color: #526249; }
+.recap-idle { display: grid; place-items: center; flex: 0 0 54px; height: 70px; font: 28px var(--mono); background: #ddd8c9; color: #686959; }
+.recap-target { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; min-width: 0; }
+.recap-target-label { font-size: 11px; color: var(--muted); }
+.recap-result { display: flex; gap: 16px; margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--line); }
+.recap-result > span { display: flex; flex-direction: column; }
+.recap-result small { font-size: 10px; color: var(--muted); }
+.recap-result strong { font: 700 23px/1.3 var(--mono); }
+.recap-result strong small { font: 11px var(--mono); }
+.recap-damage strong { color: #ac3826; }
+#room-view .recap-damage strong, :root[data-theme="dark"] .recap-damage strong { color: #ffb695; }
+.recap-safe strong, .recap-hp strong { color: var(--ink); }
+.recap-battle { margin-top: 20px; }
+.recap-battle > h3 { margin-bottom: 8px; font-size: 19px; }
+.timer.timer-urgent { color: #ffb695; outline: 2px dashed currentColor; outline-offset: 5px; border-radius: 5px; }
+#ready-warning { position: fixed; top: 112px; right: 18px; z-index: 30; display: flex; align-items: center; gap: 12px; width: min(390px, calc(100vw - 32px)); padding: 14px 16px; background: #fff0d4; color: #512a1b; border: 2px solid #b35429; border-radius: 12px 7px 13px 8px; box-shadow: 3px 4px 0 #1b2a2240; pointer-events: none; }
+.warning-clock { display: grid; place-items: center; flex: 0 0 30px; height: 30px; font: 800 24px var(--mono); border: 2px solid currentColor; border-radius: 50%; }
+#ready-warning strong { font-size: 14px; }
+#ready-warning p { font-size: 12px; margin-top: 3px; }
+@media (max-width: 650px) {
+  .recap-actions { grid-template-columns: 1fr; }
+  .action-recap { padding: 10px; }
+  .recap-play { grid-template-columns: minmax(135px, 1fr) minmax(0, 1fr); }
+  #ready-warning { top: 10px; right: 10px; width: calc(100vw - 20px); padding: 10px 12px; }
+}
+@media (max-width: 360px) {
+  .recap-play { grid-template-columns: 1fr; }
+  .recap-target { flex-direction: row; align-items: center; }
+}

@@ -1,0 +1,29 @@
+.card-art.art-heal::before, .card-art.art-drain::before, .card-art.art-energy_break::before {
+  width: 100%; height: 100%; aspect-ratio: auto; background-size: contain;
+  background-position: center; background-repeat: no-repeat;
+}
+.art-heal::before { background-image: url('/static/card-heal.png'); }
+.art-drain::before { background-image: url('/static/card-drain.png'); }
+.art-energy_break::before { background-image: url('/static/card-energy-break.png'); }
+#room-view .card-grid, .rule-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+#room-view .card-grid { overflow: visible; }
+.battle-rules-form { padding: 12px; margin: 12px 0; border: 1px dashed var(--line); min-width: 0; }
+.battle-rules-form legend { font-weight: 700; padding: 0 6px; }
+.initial-resources { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.allowed-card-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.allowed-card-option { display: flex; align-items: center; gap: 6px; padding: 7px; margin: 0; border: 1px solid var(--line); border-radius: 5px; cursor: pointer; min-width: 0; }
+.allowed-card-option input { width: 17px; height: 17px; margin: 0; flex-shrink: 0; }
+.allowed-card-option .card-art { width: 36px; height: 42px; flex: 0 0 36px; }
+.allowed-card-option .card-icon { display: none; }
+.allowed-card-option > span:last-child { min-width: 0; font-size: 12px; overflow-wrap: anywhere; }
+.allowed-card-option small { display: block; font-size: 10px; color: var(--muted); }
+.room-rules-summary { display: flex; flex-direction: column; gap: 5px; padding: 10px 12px; border: 1px dashed var(--line); margin-bottom: 12px; font-size: 12px; overflow-wrap: anywhere; }
+.recap-result { flex-wrap: wrap; gap: 10px 16px; }
+.recap-healing strong { color: #3c8356; }
+#room-view .recap-healing strong, :root[data-theme="dark"] .recap-healing strong { color: #a3dfad; }
+@media (max-width: 600px) {
+  .rule-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #room-view .card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  #room-view .card-grid .card { min-width: 0; }
+  #room-view .card-grid .card-cost { font-size: 9px; white-space: normal; }
+}

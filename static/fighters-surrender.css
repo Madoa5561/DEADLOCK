@@ -1,0 +1,27 @@
+/* 既存の戦闘員の画像番号とランク用画像の配置を維持する  */
+.portrait[data-sprite="5"], .portrait[data-sprite="6"], .portrait[data-sprite="7"] { background-size: cover; background-repeat: no-repeat; background-color: #f5edda; }
+.portrait[data-sprite="5"] { background-image: url('/static/fighter-mechanic.webp'); }
+.portrait[data-sprite="6"] { background-image: url('/static/fighter-pilot.webp'); }
+.portrait[data-sprite="7"] { background-image: url('/static/fighter-medic.webp'); }
+.avatar-options { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.avatar-option { min-width: 0; }
+.avatar-option span { min-height: 38px; overflow-wrap: anywhere; }
+.intro .lineup { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: min(100%, 400px); height: auto; aspect-ratio: auto; background: none; }
+.intro .lineup .portrait { width: 100%; height: auto; min-width: 0; aspect-ratio: 3 / 5; border: 1px solid var(--line); border-radius: 6px 3px 7px 4px; }
+.room-controls { display: flex; align-items: center; justify-content: flex-end; gap: 18px; flex-shrink: 0; }
+.room-controls .note { margin: 0; }
+#room-view .surrender-button { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 8px 14px; border: 2px solid #e5af97; color: #ffe3d2; background: #3b302b; border-radius: 7px 10px 6px 9px; }
+#room-view .surrender-button:hover { background: #674236; border-color: #ffceb0; }
+.surrender-button svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; }
+#surrender-dialog { width: min(460px, calc(100vw - 32px)); border: 2px solid var(--accent); border-radius: 12px 8px 14px 9px; }
+.surrender-dialog-actions { display: grid; gap: 14px; margin-top: 24px; }
+#surrender-dialog button { margin: 0; min-height: 48px; }
+#surrender-dialog .confirm-surrender { color: #fff6e7; background: #973f2b; border-color: #7e3021; }
+#surrender-dialog .confirm-surrender:hover { background: #b65037; }
+@media (max-width: 650px) {
+  .avatar-options { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .avatar-option span { font-size: 10px; padding: 6px 2px; }
+  .room-controls { gap: 10px; }
+  .room-controls .note { display: none; }
+  #room-view .surrender-button { padding: 8px 12px; }
+}
